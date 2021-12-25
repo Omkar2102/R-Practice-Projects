@@ -1,12 +1,6 @@
 #connecting to the SQL server
 library(odbc)
-con <- dbConnect(odbc(),
-                 Driver = "SQL Server",
-                 Server = "10.0.4.86\\CSISQL2017",
-                 Database = "cucms_bsnl",
-                 UID = "sa",
-                 PWD = rstudioapi::askForPassword("password"),
-                 Port = 1433)
+con <- dbConnect()
 #selecting the dataset required
 library(RODBC)
 Service_Request_Escalations <- dbGetQuery(con,"select top 1000 * from Service_Request_Escalations")
