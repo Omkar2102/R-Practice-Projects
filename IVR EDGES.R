@@ -2,9 +2,7 @@ library(mongolite)
 library(config)
 library(dplyr)
 library(tidyverse)
-connection <- mongo(collection = "ivr_traversal_edges",
-                    db = "care",
-                    url = "mongodb://10.0.0.56:27017")
+connection <- mongo()
 data_tree <- connection$find('{}', fields = '{}')
 
 #separate out source and target coloumns
